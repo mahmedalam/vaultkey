@@ -10,7 +10,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { baseUrl } from "@/constants";
+import env from "@/env";
 import { categoriesEnum } from "@/db/schema";
 import { calculatePasswordStrength } from "@/lib/utils";
 import formSchema from "@/schemas/add-password-schema";
@@ -57,7 +57,7 @@ export default function PasswordForm({ id }: { id: number | null }) {
     }
 
     async function fetchPassword() {
-      const response = await fetch(`${baseUrl}/api/passwords?id=${id}`);
+      const response = await fetch(`${env.baseUrl}/api/passwords?id=${id}`);
       const { title, url, username, password, note, category } = (
         await response.json()
       ).password as TPassword;
@@ -79,7 +79,7 @@ export default function PasswordForm({ id }: { id: number | null }) {
     const securityLevel = calculatePasswordStrength(password);
 
     if (id) {
-      const response = await fetch(`${baseUrl}/api/passwords`, {
+      const response = await fetch(`${env.baseUrl}/api/passwords`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -106,7 +106,7 @@ export default function PasswordForm({ id }: { id: number | null }) {
       return;
     }
 
-    const response = await fetch(`${baseUrl}/api/passwords`, {
+    const response = await fetch(`${env.baseUrl}/api/passwords`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,6 +1,6 @@
 "use client";
 
-import { baseUrl } from "@/constants";
+import env from "@/env";
 import { timeAgo } from "@/lib/utils";
 import {
   Calendar,
@@ -50,7 +50,7 @@ export default function PasswordCard({
   };
 
   const handleDelete = async (id: number) => {
-    const response = await fetch(`${baseUrl}/api/passwords?id=${id}`, {
+    const response = await fetch(`${env.baseUrl}/api/passwords?id=${id}`, {
       method: "DELETE",
     });
 
