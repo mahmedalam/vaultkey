@@ -66,28 +66,32 @@ export default function PasswordCard({
   return (
     <div className="card">
       {/* Service Name, Category, Security Level, Edit & Delete */}
-      <div className="flex items-center gap-2">
-        <h2>{title}</h2>
-        <Badge variant="secondary">{category}</Badge>
-        {securityLevel === "Low" ? (
-          <ShieldX className="stroke-red-500 ml-auto" />
-        ) : securityLevel === "Medium" ? (
-          <ShieldAlert className="stroke-yellow-500 ml-auto" />
-        ) : (
-          <ShieldCheck className="stroke-green-500 ml-auto" />
-        )}
-        <CustomButton
-          variant="ghost"
-          icon={<Edit />}
-          tooltip="Edit"
-          onClick={handleEdit}
-        />
-        <CustomButton
-          variant="ghost"
-          icon={<Trash />}
-          tooltip="Delete"
-          onClick={() => handleDelete(id)}
-        />
+      <div className="flex flex-col-reverse sm:flex-row flex-wrap-reverse items-end sm:items-center justify-between gap-4">
+        <div className="flex items-center gap-2">
+          <h2>{title}</h2>
+          <Badge variant="secondary">{category}</Badge>
+        </div>
+        <div className="flex items-center gap-2">
+          {securityLevel === "Low" ? (
+            <ShieldX className="stroke-red-500 ml-auto" />
+          ) : securityLevel === "Medium" ? (
+            <ShieldAlert className="stroke-yellow-500 ml-auto" />
+          ) : (
+            <ShieldCheck className="stroke-green-500 ml-auto" />
+          )}
+          <CustomButton
+            variant="ghost"
+            icon={<Edit />}
+            tooltip="Edit"
+            onClick={handleEdit}
+          />
+          <CustomButton
+            variant="ghost"
+            icon={<Trash />}
+            tooltip="Delete"
+            onClick={() => handleDelete(id)}
+          />
+        </div>
       </div>
 
       {/* Username/Email */}

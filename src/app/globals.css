@@ -109,15 +109,15 @@
 
   main,
   section {
-    @apply w-2xl mx-auto my-11 space-y-6;
+    @apply md:max-w-2xl mx-4 md:mx-auto my-6 lg:my-11 space-y-3 lg:space-y-6;
   }
 
   h1 {
-    @apply text-4xl font-semibold text-center my-11 capitalize;
+    @apply text-3xl lg:text-4xl font-semibold text-center my-6 lg:my-11 capitalize;
   }
 
   h2 {
-    @apply text-2xl font-semibold capitalize;
+    @apply text-xl lg:text-2xl font-semibold capitalize;
   }
 
   p {
@@ -127,7 +127,7 @@
 
 @layer utilities {
   .card {
-    @apply max-w-[672px] bg-white px-8 py-6 space-y-2 border rounded-2xl shadow-sm;
+    @apply max-w-[335px] sm:max-w-[600px] md:max-w-[672px] mx-auto bg-white px-8 py-6 space-y-2 border rounded-2xl shadow-sm;
   }
 
   .flex-center {

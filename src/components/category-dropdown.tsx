@@ -35,7 +35,7 @@ export default function CategoryDropdown({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[606px] justify-between"
+          className="sm:w-[534px] md:w-[606px] justify-between"
         >
           {value
             ? categories.find((category) => category === value)
@@ -43,7 +43,7 @@ export default function CategoryDropdown({
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[606px] p-0">
+      <PopoverContent className="w-[269px] sm:w-[534px] md:w-[606px] p-0">
         <Command>
           <CommandList>
             <CommandGroup>
